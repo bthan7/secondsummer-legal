@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact Us — Second Summer</title>
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="assets/keya-logo.svg">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<style>
+  :root {
+    --bg: #faf6ee;
+    --bg-soft: #f0ebdd;
+    --card: #ffffff;
+    --text: #23303a;
+    --text-dim: #5f7280;
+    --accent: #14b0a3;
+    --accent-deep: #0e7f8c;
+    --coral: #ff8a70;
+    --border: rgba(0, 0, 0, 0.08);
+    --shadow: rgba(35, 48, 58, 0.14);
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    padding: 48px 20px;
+  }
+
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: 0 10px 32px var(--shadow);
+    padding: 48px 56px;
+  }
+
+  h1 {
+    color: var(--accent-deep);
+    font-size: 2rem;
+    line-height: 1.25;
+    margin-bottom: 8px;
+  }
+
+  p {
+    margin-bottom: 14px;
+  }
+
+  p.meta {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    margin-bottom: 28px;
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-color: var(--coral);
+    text-underline-offset: 2px;
+  }
+
+  a:hover {
+    color: var(--accent-deep);
+  }
+
+  .notice {
+    background: var(--bg-soft);
+    border-left: 4px solid var(--accent);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+  }
+
+  form {
+    margin-top: 8px;
+  }
+
+  .field {
+    margin-bottom: 20px;
+  }
+
+  label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  label .required {
+    color: var(--coral);
+  }
+
+  .hint {
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    margin-top: 4px;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    font: inherit;
+    color: var(--text);
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 12px;
+  }
+
+  select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%235f7280' d='M1.41.59 6 5.17 10.59.59 12 2 6 8 0 2z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 36px;
+  }
+
+  textarea {
+    min-height: 140px;
+    resize: vertical;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(20, 176, 163, 0.15);
+  }
+
+  .honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  button[type="submit"] {
+    display: inline-block;
+    font: inherit;
+    font-weight: 600;
+    color: #ffffff;
+    background: var(--accent);
+    border: none;
+    border-radius: 8px;
+    padding: 12px 32px;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+
+  button[type="submit"]:hover {
+    background: var(--accent-deep);
+  }
+
+  button[type="submit"]:disabled {
+    opacity: 0.6;
+    cursor: default;
+  }
+
+  .fallback {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    margin-top: 16px;
+  }
+
+  footer {
+    max-width: 760px;
+    margin: 24px auto 0;
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 600px) {
+    body {
+      padding: 24px 12px;
+    }
+
+    main {
+      padding: 28px 20px;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+    }
+  }
+
+  /* Site header: clickable brand that returns to the Keya Games home page. */
+  .site-brand {
+    max-width: 760px;
+    margin: 0 auto 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 1.02rem;
+    color: var(--text);
+    text-decoration: none;
+    width: fit-content;
+  }
+  .site-brand:hover { color: var(--accent-deep); }
+  .site-brand img { width: 30px; height: 30px; display: block; }
+
+  /* Footer: address plus the same set of cross-links on every page. */
+  .site-footer {
+    max-width: 760px;
+    margin: 24px auto 0;
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    text-align: center;
+    line-height: 1.7;
+  }
+  .site-footer a { color: var(--accent); text-decoration-color: var(--coral); }
+  .site-footer a:hover { color: var(--accent-deep); }
+</style>
+</head>
+<body>
+<a class="site-brand" href="https://www.keyagames.com/">
+  <img src="assets/keya-logo.svg" alt="">
+  Keya Games
+</a>
+<main>
+  <h1>Contact Us</h1>
+  <p class="meta">Second Summer &middot; Keya Games Inc.</p>
+
+  <p>Have a question, spotted a bug, or need help with a purchase? Drop us a line below — we&rsquo;re happy to help. We usually reply within 2 business days.</p>
+
+  <form action="https://formsubmit.co/support@keyagames.com" method="POST">
+    <input type="hidden" name="_subject" value="Second Summer Contact Form">
+    <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+    <div class="field">
+      <label for="name">Name <span class="required">*</span></label>
+      <input type="text" id="name" name="name" required autocomplete="name">
+    </div>
+
+    <div class="field">
+      <label for="email">Email <span class="required">*</span></label>
+      <input type="email" id="email" name="email" required autocomplete="email">
+      <p class="hint">We&rsquo;ll use this address to reply to you.</p>
+    </div>
+
+    <div class="field">
+      <label for="topic">Topic <span class="required">*</span></label>
+      <select id="topic" name="topic" required>
+        <option value="">Please choose a topic&hellip;</option>
+        <option value="General Question">General Question</option>
+        <option value="Bug Report">Bug Report</option>
+        <option value="Purchase &amp; Billing">Purchase &amp; Billing</option>
+        <option value="Account &amp; Save Data">Account &amp; Save Data</option>
+        <option value="Account Deletion Request">Account Deletion Request</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="player-id">Player ID <span class="hint" style="display:inline; font-weight:400;">(optional)</span></label>
+      <input type="text" id="player-id" name="player_id" autocomplete="off">
+      <p class="hint">Found in Settings &rarr; Support in the game. It helps us find your account faster.</p>
+    </div>
+
+    <div class="field">
+      <label for="message">Message <span class="required">*</span></label>
+      <textarea id="message" name="message" required></textarea>
+    </div>
+
+    <button type="submit" id="submit-button">Send Message</button>
+
+    <p class="fallback">Prefer email? You can also reach us directly at <a href="mailto:support@keyagames.com">support@keyagames.com</a>.</p>
+  </form>
+</main>
+
+<footer class="site-footer">
+  <p>Keya Games Inc., 1401 Pennsylvania Ave., Suite 105, #2334, Wilmington, Delaware 19806, USA</p>
+  <p><a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="terms-of-service.html">Terms of Service</a> &middot; <a href="https://www.keyagames.com/">Keya Games home</a></p>
+</footer>
+
+<script>
+  // Small enhancement: prevent double submissions. The form works without JS.
+  (function ()
+  {
+    var contactForm = document.querySelector("form");
+    var submitButton = document.getElementById("submit-button");
+    contactForm.addEventListener("submit", function ()
+    {
+      submitButton.disabled = true;
+      submitButton.textContent = "Sending…";
+    });
+  })();
+</script>
+<script>
+  // FormSubmit redirects here after a message; built from the page's own address so it works on any host.
+  (function () {
+    var form = document.querySelector('form[action^="https://formsubmit.co/"]');
+    if (form === null) { return; }
+    var next = document.createElement('input');
+    next.type = 'hidden';
+    next.name = '_next';
+    next.value = new URL('thanks.html', window.location.href).href;
+    form.appendChild(next);
+  })();
+</script>
+</body>
+</html>

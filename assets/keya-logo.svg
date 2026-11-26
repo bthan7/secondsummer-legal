@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024" role="img" aria-label="Keya Games">
+  <title>Keya Games</title>
+  <!-- Coral frame. The corners are rounded here rather than with a CSS border-radius on the <img>:
+       the artwork runs to the edge of the viewBox, so an outside clip cuts into the frame and the
+       letters instead of just softening the corners. -->
+  <rect width="1024" height="1024" rx="176" fill="#FB4560"/>
+  <rect x="60" y="60" width="904" height="904" rx="124" fill="#FFFFFF"/>
+
+  <g fill="#FB4560">
+    <!-- K -->
+    <rect x="172" y="140" width="82" height="332"/>
+    <path d="M254 306 L378 140 L474 140 L344 306 L474 472 L378 472 Z"/>
+
+    <!-- E rendered as a C-shape (top bar, spine, bottom bar) so the counter stays open,
+         with a free-standing play triangle sitting inside it. -->
+    <path d="M562 140 H846 V222 H644 V390 H846 V472 H562 Z"/>
+    <path d="M690 246 L820 306 L690 366 Z"/>
+
+    <!-- Y -->
+    <path d="M172 552 H254 V690 a83 83 0 0 0 166 0 V552 H502 V690 a165 165 0 0 1 -124 160 V884 H296 V850 a165 165 0 0 1 -124 -160 Z"/>
+
+    <!-- A -->
+    <path d="M552 884 V706 a154 154 0 0 1 308 0 V884 H778 V806 H634 V884 Z M634 734 H778 V706 a72 72 0 0 0 -144 0 Z"/>
+  </g>
+</svg>
